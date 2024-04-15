@@ -1,7 +1,7 @@
-package com.volcano.service.impl;
+package com.avia.service.impl;
 
-import com.volcano.service.BaseService;
-import com.volcano.service.STOService;
+import com.avia.service.BaseService;
+import com.avia.service.STOService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;

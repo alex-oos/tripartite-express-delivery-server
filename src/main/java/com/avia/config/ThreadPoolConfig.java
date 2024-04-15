@@ -1,4 +1,4 @@
-package com.volcano.config;
+package com.avia.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

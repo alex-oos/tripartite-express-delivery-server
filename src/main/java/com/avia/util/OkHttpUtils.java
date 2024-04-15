@@ -1,4 +1,4 @@
-package com.volcano.util;
+package com.avia.util;
 
 import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;

@@ -1,4 +1,4 @@
-package com.volcano.config;
+package com.avia.config;
 
 
 import lombok.Getter;

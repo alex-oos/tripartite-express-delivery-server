@@ -1,6 +1,6 @@
-package com.volcano.controller;
+package com.avia.controller;
 
-import com.volcano.service.BaseService;
+import com.avia.service.BaseService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

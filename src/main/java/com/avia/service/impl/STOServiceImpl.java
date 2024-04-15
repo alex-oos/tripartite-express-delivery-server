@@ -1,10 +1,10 @@
-package com.volcano.service.impl;
+package com.avia.service.impl;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.volcano.config.STOConfiguration;
-import com.volcano.service.STOService;
-import com.volcano.util.BaseUtil;
-import com.volcano.util.OkHttpUtils;
+import com.avia.config.STOConfiguration;
+import com.avia.service.STOService;
+import com.avia.util.BaseUtil;
+import com.avia.util.OkHttpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

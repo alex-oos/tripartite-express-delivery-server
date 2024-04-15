@@ -1,7 +1,7 @@
-package com.volcano.listener;
+package com.avia.listener;
 
-import com.volcano.event.StoEvent;
-import com.volcano.service.STOService;
+import com.avia.event.StoEvent;
+import com.avia.service.STOService;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 

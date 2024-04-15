@@ -1,4 +1,4 @@
-package com.volcano.event;
+package com.avia.event;
 
 import org.springframework.context.ApplicationEvent;
 

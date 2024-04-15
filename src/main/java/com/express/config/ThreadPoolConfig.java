@@ -58,7 +58,7 @@ public class ThreadPoolConfig {
      * 计算密集型线程池：数量一般为 N+1个 N为CPU核心数
      * IO密集型：数量一般为：2N + 1个 N为CPU核心数
      */
-    @Bean(name = "commonThreadPool")
+    @Bean
     public ThreadPoolTaskExecutor threadPoolTaskExecutor() {
 
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();

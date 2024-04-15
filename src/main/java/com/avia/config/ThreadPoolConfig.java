@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * <P></p>
  *
- * @author lijiang
+ * @author Alex
  * @since 2024/3/12 下午5:09
  * 线程池配置类
  */

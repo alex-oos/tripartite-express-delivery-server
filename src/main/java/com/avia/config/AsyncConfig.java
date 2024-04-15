@@ -9,7 +9,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 /**
  * <P></p>
  *
- * @author lijiang
+ * @author Alex
  * @since 2024/3/12 下午5:11
  * 异步线程池配置
  */

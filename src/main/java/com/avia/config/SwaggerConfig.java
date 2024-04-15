@@ -1,6 +1,7 @@
 package com.avia.config;
 
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -26,6 +27,7 @@ import springfox.documentation.spring.web.plugins.Docket;
  * @version 1.0
  * @since 2021/8/27
  */
+@EnableKnife4j
 @Configuration
 @EnableOpenApi
 @Profile(value = {"dev", "test"})   // 生产环境默认不开启

@@ -1,5 +1,6 @@
 package com.avia.controller;
 
+import com.avia.annotation.WebLog;
 import com.avia.service.BaseService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +14,7 @@ public class ExpressDeliveryController {
     @Resource
     private BaseService baseService;
 
-
+    @WebLog
     @GetMapping(value = "/mailNo")
     public String sendSms(@RequestParam String mailNo) {
 

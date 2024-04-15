@@ -1,4 +1,4 @@
-package com.express.config;
+package com.volcano.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

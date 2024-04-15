@@ -1,4 +1,4 @@
-package com.express.service;
+package com.volcano.service;
 
 public interface BaseService {
 

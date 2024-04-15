@@ -1,4 +1,4 @@
-package com.express.util;
+package com.volcano.util;
 
 import com.alibaba.fastjson2.JSON;
 import org.apache.commons.codec.digest.DigestUtils;

@@ -1,4 +1,4 @@
-package com.express.common;
+package com.volcano.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -35,7 +35,7 @@ public class WebLogAspect {
     /**
      * 以自定义 @WebLog 注解为切点
      */
-    @Pointcut("execution(public * com.springboot.controller.*.*(..))")
+    @Pointcut("execution(public * com.avia.controller.*.*(..))")
     public void webLog() {
     }
 

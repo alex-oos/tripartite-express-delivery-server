@@ -1,2 +1,12 @@
 server:
   port: 8081
+
+
+spring:
+  config:
+    activate:
+      on-profile: test
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: INfO

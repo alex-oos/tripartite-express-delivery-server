@@ -1,7 +1,6 @@
 package com.avia.aspect;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.avia.annotation.WebLog;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -36,7 +35,7 @@ public class WebLogAspect {
     /**
      * 以自定义 @WebLog 注解为切点
      */
-    @Pointcut("@annotation(com.springboot.annotation.WebLog)")
+    @Pointcut("execution(public * com.springboot.controller.*.*(..))")
     public void webLog() {
     }
 
@@ -124,7 +123,6 @@ public class WebLogAspect {
             if (method.getName().equals(methodName)) {
                 Class[] clazzs = method.getParameterTypes();
                 if (clazzs.length == arguments.length) {
-                    description.append(method.getAnnotation(WebLog.class).description());
                     break;
                 }
             }

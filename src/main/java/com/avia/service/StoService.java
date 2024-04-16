@@ -15,10 +15,10 @@ public interface StoService {
     /**
      *  短信发送接口
      */
-    Boolean sendSms();
+    Boolean sendSms(String categoryCode, String passage, String templateCode, String templateParam, String mailNo, String receiveNumber, String extend);
 
     /**
      * 短信发送结果推送
      */
-    Boolean sendSmsResultPush();
+    Boolean sendSmsResultPush(String biZid, String status, String errCode, String errMessage, String receiver, String sendTime, String reptTime, String extend);
 }

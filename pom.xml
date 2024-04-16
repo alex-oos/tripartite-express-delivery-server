@@ -81,12 +81,12 @@
             <artifactId>okhttp</artifactId>
             <version>5.0.0-alpha.11</version>
         </dependency>
-        <!--        加密解密-->
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.16.1</version>
-        </dependency>
+        <!--        &lt;!&ndash;        加密解密&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>commons-codec</groupId>-->
+        <!--            <artifactId>commons-codec</artifactId>-->
+        <!--            <version>1.16.1</version>-->
+        <!--        </dependency>-->
         <!--swagger 依赖-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>

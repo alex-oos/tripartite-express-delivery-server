@@ -2,7 +2,6 @@ package com.avia.config;
 
 
 import lombok.Getter;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Getter
@@ -10,12 +9,15 @@ import org.springframework.context.annotation.Configuration;
 public class StoConfiguration {
 
 
-    private String appKey = "CAKakHJIOTyuGko";
+    private final String fromAppKey = "CAKakHJIOTyuGko";
 
-    private String secretKey = "7RrimcFVGUk2mK5uuCVZYXWVjbt4SpCv";
+    private final String fromCode = "CAKakHJIOTyuGko";
 
-    private String code = "CAKakHJIOTyuGko";
+    private final String toAppkey = "market_message";
 
-    private String toAppkey = "market_message";
+    private final String toCode = "market_message";
+
+    private final String secretKey = "7RrimcFVGUk2mK5uuCVZYXWVjbt4SpCv";
+
 
 }

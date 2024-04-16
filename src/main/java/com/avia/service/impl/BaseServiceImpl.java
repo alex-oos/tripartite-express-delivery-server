@@ -39,8 +39,8 @@ public class BaseServiceImpl implements BaseService {
         // 3.拿到结果
         switch (companyName) {
             case "sto":
-                stoService.sendSms();
-                stoService.sendSmsResultPush();
+                // stoService.sendSms();
+                // stoService.sendSmsResultPush();
                 return "aa";
             case "zto":
                 ztoService.isCanSendSms("1", "1");

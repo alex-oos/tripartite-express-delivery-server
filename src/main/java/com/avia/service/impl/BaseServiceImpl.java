@@ -1,7 +1,9 @@
 package com.avia.service.impl;
 
 import com.avia.service.BaseService;
+import com.avia.service.JtService;
 import com.avia.service.StoService;
+import com.avia.service.ZtoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,12 @@ public class BaseServiceImpl implements BaseService {
     private StoService stoService;
 
     @Resource
+    private ZtoService ztoService;
+
+    @Resource
+    private JtService jtService;
+
+    @Resource
     private ThreadPoolTaskExecutor threadPoolExecutor;
 
     @Override
@@ -30,12 +38,14 @@ public class BaseServiceImpl implements BaseService {
         // 2.发送快递
         // 3.拿到结果
         switch (companyName) {
-            case "STO":
+            case "sto":
                 stoService.sendSms();
                 stoService.sendSmsResultPush();
                 return "aa";
-            case "demo":
-                return "demo";
+            case "zto":
+                ztoService.isCanSendSms("1", "1");
+                ztoService.sendSms("1", "1", "1", "1", "1");
+                return "zto";
             default:
                 return "数据为空";
         }
@@ -51,17 +61,22 @@ public class BaseServiceImpl implements BaseService {
         CompletableFuture<String> stoFuture = CompletableFuture.supplyAsync(() -> {
             Boolean verify = stoService.verify(mailNo);
             if (verify) {
-                return "STO";
+                return "sto";
             }
             return null;
         }, threadPoolExecutor);
-        // 其他快递公司
-
-
-        //
+        // 中通快递
+        CompletableFuture<String> ztoFuture = CompletableFuture.supplyAsync(() -> {
+            Boolean verify = ztoService.verify(mailNo);
+            if (verify) {
+                return "zto";
+            }
+            return null;
+        }, threadPoolExecutor);
 
 
         list.add(stoFuture);
+        list.add(ztoFuture);
         // 获取所有结果
         for (CompletableFuture<String> booleanCompletableFuture : list) {
             try {
@@ -69,9 +84,7 @@ public class BaseServiceImpl implements BaseService {
                 if (Objects.nonNull(companyName)) {
                     return companyName;
                 }
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 throw new RuntimeException(e);
             }
 
@@ -79,12 +92,5 @@ public class BaseServiceImpl implements BaseService {
         return null;
     }
 
-    public CompletableFuture<Boolean> sendSmsAsync(String mailNo) {
-
-        return CompletableFuture.supplyAsync(() -> {
-            return stoService.verify(mailNo);
-        }, threadPoolExecutor);
-
-    }
 
 }

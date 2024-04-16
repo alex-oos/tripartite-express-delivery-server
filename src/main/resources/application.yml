@@ -4,7 +4,7 @@ server:
 
 spring:
   profiles:
-    active: test
+    active: @profiles.active@
   #    需要增加文件路径匹配，不然回报错，导致项目起不来
   mvc:
     pathmatch:

@@ -1,9 +1,7 @@
 package com.avia.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.TaskExecutor;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
@@ -36,7 +34,7 @@ public class AsyncConfig {
         // 设置队列
         executor.setQueueCapacity(100);
         // 设置线程池名称
-        executor.setThreadNamePrefix("pipeline-async-");
+        executor.setThreadNamePrefix("asyncThreadPool-");
         // 线程之间传递对象
         executor.setTaskDecorator(null);
         executor.initialize();

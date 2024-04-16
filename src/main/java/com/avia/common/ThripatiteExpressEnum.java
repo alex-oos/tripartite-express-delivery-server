@@ -7,7 +7,9 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ThripatiteExpressEnum {
 
-    STO(1, "申通", "sto");
+    STO(1, "申通", "sto"),
+    ZTO(2, "中通", "zto"),
+    JT(3, "极兔", "jt");
 
 
     private final Integer id;

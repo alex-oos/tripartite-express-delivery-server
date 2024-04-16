@@ -1,2 +1,4 @@
 jt:
   url: https://openapi.jtexpress.com.cn/webopenplatformapi/api/sms/getMobile
+sto:
+  url: https://cloudinter-linkgateway.sto.cn/gateway/link.do

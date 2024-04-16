@@ -1,9 +1,8 @@
-package com.avia.controller;
+package com.houji.controller;
 
-import com.avia.service.BaseService;
-import com.avia.service.JtService;
+import com.houji.service.BaseService;
+import com.houji.service.JtService;
 
-import lombok.val;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

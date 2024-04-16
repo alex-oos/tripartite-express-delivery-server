@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 
-@ComponentScan(value = "com.avia")
+@ComponentScan(value = "com.houji")
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,DataSourceAutoConfiguration.class})
 public class ExpressDeliveryApplication {
 

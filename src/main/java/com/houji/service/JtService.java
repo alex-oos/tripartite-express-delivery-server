@@ -1,4 +1,4 @@
-package com.avia.service;
+package com.houji.service;
 
 /**
  * @author Alex

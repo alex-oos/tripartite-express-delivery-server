@@ -1,4 +1,4 @@
-package com.avia.config;
+package com.houji.config;
 
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;

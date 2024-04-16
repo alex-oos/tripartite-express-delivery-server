@@ -1,4 +1,4 @@
-package com.avia.common;
+package com.houji.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

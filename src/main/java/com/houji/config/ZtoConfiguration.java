@@ -1,4 +1,4 @@
-package com.avia.config;
+package com.houji.config;
 
 
 import lombok.Getter;

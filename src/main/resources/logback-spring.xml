@@ -48,7 +48,7 @@
 
     <!--  指定不同包的日志级别  -->
     <!-- 日志输出级别，OFF level > FATAL > ERROR > WARN > INFO > DEBUG > ALL level -->
-    <logger name="com.avia" level="INFO"/>
+    <logger name="com.houji" level="INFO"/>
     <logger name="org.springframework" level="WARN"/>
 
     <root level="INFO">

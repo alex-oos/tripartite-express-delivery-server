@@ -1,10 +1,9 @@
-package com.avia.service.impl;
+package com.houji.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.avia.service.JtService;
+import com.houji.service.JtService;
 import com.yl.jms.sdk.JtExpressApi;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

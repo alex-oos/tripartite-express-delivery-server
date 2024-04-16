@@ -1,4 +1,4 @@
-package com.avia.config;
+package com.houji.config;
 
 import com.yl.jms.sdk.JtExpressApi;
 import com.yl.jms.sdk.auth.ClientConfiguration;
@@ -31,7 +31,7 @@ public class JtConfig {
 
     // 协议客户密码
     @Value("6A272C3DD1F3CD2F92BF567C37040910")
-    private String pwd;
+    private String orderPassword;
 
     @Bean
     public JtExpressApi jtExpressApi() {
@@ -39,7 +39,7 @@ public class JtConfig {
         ClientConfiguration clientConfiguration = new ClientConfiguration(apiAccount, privateKey);
         // 当调用postByCustom方法时需要customerCode和orderPassword
         clientConfiguration.setCustomerCode(customerCode);
-        clientConfiguration.setCustomerPwd(pwd);
+        clientConfiguration.setCustomerPwd(orderPassword);
         JtExpressApi jtExpressApi = new JtExpressApiOperator(clientConfiguration);
         return jtExpressApi;
     }

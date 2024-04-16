@@ -1,4 +1,4 @@
-package com.avia.util;
+package com.houji.util;
 
 import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;

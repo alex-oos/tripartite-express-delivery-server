@@ -1,9 +1,9 @@
-package com.avia.service.impl;
+package com.houji.service.impl;
 
-import com.avia.service.BaseService;
-import com.avia.service.JtService;
-import com.avia.service.StoService;
-import com.avia.service.ZtoService;
+import com.houji.service.BaseService;
+import com.houji.service.JtService;
+import com.houji.service.StoService;
+import com.houji.service.ZtoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;

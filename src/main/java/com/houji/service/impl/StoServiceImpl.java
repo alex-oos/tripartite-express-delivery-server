@@ -1,9 +1,9 @@
-package com.avia.service.impl;
+package com.houji.service.impl;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.avia.config.StoConfiguration;
-import com.avia.service.StoService;
-import com.avia.util.OkHttpUtils;
+import com.houji.config.StoConfiguration;
+import com.houji.service.StoService;
+import com.houji.util.OkHttpUtils;
 import com.sto.link.util.SignatureUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.avia.config;
+package com.houji.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.task.TaskExecutor;

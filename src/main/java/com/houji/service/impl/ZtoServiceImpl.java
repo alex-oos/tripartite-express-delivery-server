@@ -1,9 +1,9 @@
-package com.avia.service.impl;
+package com.houji.service.impl;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.avia.config.ZtoConfiguration;
-import com.avia.service.ZtoService;
+import com.houji.config.ZtoConfiguration;
+import com.houji.service.ZtoService;
 import com.zto.zop.ZopClient;
 import com.zto.zop.ZopPublicRequest;
 import lombok.extern.slf4j.Slf4j;

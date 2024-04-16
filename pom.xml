@@ -115,7 +115,7 @@
             <artifactId>sto-link-sdk</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${pom.basedir}/libs/sto-link-sdk-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>${pom.basedir}/src/main/resources/libs/sto-link-sdk-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <!--中通快递 sdk-->
         <dependency>
@@ -123,7 +123,7 @@
             <artifactId>zopsdk</artifactId>
             <version>0.11</version>
             <scope>system</scope>
-            <systemPath>${pom.basedir}/libs/zopsdk-0.11.jar</systemPath>
+            <systemPath>${pom.basedir}/src/main/resources/libs/zopsdk-0.11.jar</systemPath>
         </dependency>
         <!--极兔jdk -->
         <dependency>
@@ -132,7 +132,7 @@
             <version>2.0.0</version>
             <scope>system</scope>
             <!-- 指定依赖包的路径-->
-            <systemPath>${pom.basedir}/libs/yl-jms-isv-sdk-2.0.0.jar</systemPath>
+            <systemPath>${pom.basedir}/src/main/resources/libs/yl-jms-isv-sdk-2.0.0.jar</systemPath>
         </dependency>
     </dependencies>
 

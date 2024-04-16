@@ -3,7 +3,7 @@ package com.avia.service;
 /**
  * 申通服务
  */
-public interface STOService {
+public interface StoService {
 
     /**
      * 验证短信发送接口

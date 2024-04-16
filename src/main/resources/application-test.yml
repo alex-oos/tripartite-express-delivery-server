@@ -1,7 +1,4 @@
-express:
-  - sto:
-      - appKey: 'CAKakHJIOTyuGko'
-      - secretKey: 7RrimcFVGUk2mK5uuCVZYXWVjbt4SpCv
-      - code: CAKakHJIOTyuGko
-      - url: http://cloudinter-linkgatewaytest.sto.cn/gateway/link.do
-      - toAppkey: market_message
+sto:
+  url: http://cloudinter-linkgatewaytest.sto.cn/gateway/link.do
+zto:
+  url: https://japi-test.zto.com/zto.msg.sms.checkBillCode

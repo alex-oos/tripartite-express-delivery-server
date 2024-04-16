@@ -1,11 +1,12 @@
 package com.avia.service.impl;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.avia.config.STOConfiguration;
-import com.avia.service.STOService;
+import com.avia.config.StoConfiguration;
+import com.avia.service.StoService;
 import com.avia.util.BaseUtil;
 import com.avia.util.OkHttpUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,10 +15,13 @@ import java.util.Map;
 
 @Slf4j
 @Service
-public class STOServiceImpl implements STOService {
+public class StoServiceImpl implements StoService {
 
     @Resource
-    private STOConfiguration stoConfiguration;
+    private StoConfiguration stoConfiguration;
+
+    @Value("${sto.url}")
+    private String url ;
 
     @Override
     public Boolean verify(String mailNo) {
@@ -36,7 +40,7 @@ public class STOServiceImpl implements STOService {
         paramMap.put("to_appkey", stoConfiguration.getAppKey());
         paramMap.put("to_code", stoConfiguration.getAppKey());
         paramMap.put("data_digest", dataDigest);
-        String res = OkHttpUtils.builder().url(stoConfiguration.getUrl()).addParam(paramMap).post(false).async();
+        String res = OkHttpUtils.builder().url(url).addParam(paramMap).post(false).async();
         log.info("响应为：{}", res);
 
         JSONObject response = JSONObject.parse(res);

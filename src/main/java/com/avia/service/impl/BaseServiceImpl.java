@@ -1,7 +1,7 @@
 package com.avia.service.impl;
 
 import com.avia.service.BaseService;
-import com.avia.service.STOService;
+import com.avia.service.StoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutionException;
 public class BaseServiceImpl implements BaseService {
 
     @Resource
-    private STOService stoService;
+    private StoService stoService;
 
     @Resource
     private ThreadPoolTaskExecutor threadPoolExecutor;

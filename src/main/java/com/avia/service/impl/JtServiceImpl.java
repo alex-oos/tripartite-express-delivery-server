@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.avia.service.JtService;
 import com.yl.jms.sdk.JtExpressApi;
 import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -30,15 +31,17 @@ public class JtServiceImpl implements JtService {
     @Override
     public Boolean verify(String mailNo) {
 
-        Map<String, String> pram = new HashMap<>();
+        Map<String, Object> pram = new HashMap<>();
         pram.put("waybillNo", mailNo);
         // 把接口需要的参数封装到map
-        Map<String, Object> map = new HashMap<>();
-        map.put("bizContent", JSONObject.toJSONString(pram));
+        // Map<String, Object> map = new HashMap<>();
+        // map.put("bizContent", JSONObject.toJSONString(pram));
+        // val jsonString = JSONObject.toJSONString(map);
+        // System.out.println(jsonString);
         // 调用执行器,调用接口方法
         JSONObject res = null;
         try {
-            res = JtExpressApi.post(map, url);
+            res = JtExpressApi.post(pram, url);
             log.info("reponse is {}", res.toJSONString());
         } catch (IOException e) {
             throw new RuntimeException(e);

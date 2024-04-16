@@ -26,12 +26,12 @@ public class JtConfig {
     private String privateKey;
 
     // 协议客户账号
-    @Value("customerCode")
+    @Value("J0086474299")
     private String customerCode;
 
     // 协议客户密码
-    @Value("orderPassword")
-    private String orderPassword;
+    @Value("6A272C3DD1F3CD2F92BF567C37040910")
+    private String pwd;
 
     @Bean
     public JtExpressApi jtExpressApi() {
@@ -39,7 +39,7 @@ public class JtConfig {
         ClientConfiguration clientConfiguration = new ClientConfiguration(apiAccount, privateKey);
         // 当调用postByCustom方法时需要customerCode和orderPassword
         clientConfiguration.setCustomerCode(customerCode);
-        clientConfiguration.setCustomerPwd(orderPassword);
+        clientConfiguration.setCustomerPwd(pwd);
         JtExpressApi jtExpressApi = new JtExpressApiOperator(clientConfiguration);
         return jtExpressApi;
     }

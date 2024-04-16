@@ -2,3 +2,5 @@ sto:
   url: http://cloudinter-linkgatewaytest.sto.cn/gateway/link.do
 zto:
   url: https://japi-test.zto.com/zto.msg.sms.checkBillCode
+jt:
+  url:https://uat-openapi.jtexpress.com.cn/webopenplatformapi/api/sms/getMobile?uuid=39473fbddc6542739736118a42a78531

@@ -46,6 +46,9 @@ public class BaseServiceImpl implements BaseService {
                 ztoService.isCanSendSms("1", "1");
                 ztoService.sendSms("1", "1", "1", "1", "1");
                 return "zto";
+            case "jt":
+                jtService.sendSms("type", new String[]{"1", "2"}, "11");
+                return "jt";
             default:
                 return "数据为空";
         }
@@ -74,9 +77,18 @@ public class BaseServiceImpl implements BaseService {
             return null;
         }, threadPoolExecutor);
 
+        CompletableFuture<String> jtFuture = CompletableFuture.supplyAsync(() -> {
+            Boolean verify = jtService.verify(mailNo);
+            if (verify) {
+                return "jt";
+            }
+            return null;
+        }, threadPoolExecutor);
+
 
         list.add(stoFuture);
         list.add(ztoFuture);
+        list.add(jtFuture);
         // 获取所有结果
         for (CompletableFuture<String> booleanCompletableFuture : list) {
             try {

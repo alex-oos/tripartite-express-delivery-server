@@ -7,4 +7,19 @@ package com.avia.service;
  */
 public interface JtService {
 
+    /**
+     * 验证短信发送接口
+     *
+     * @param mailNo
+     * @return
+     */
+    Boolean verify(String mailNo);
+
+    /**
+     * 短信发送接口
+     */
+    Boolean sendSms(String type, String[] content, String waybillNo);
+
+
+
 }

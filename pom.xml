@@ -45,7 +45,7 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--        aop-->
+        <!--aop-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
@@ -62,12 +62,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--        日志-->
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
             <version>7.4</version>
         </dependency>
-
+        <!--        fastjson 解析-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -86,6 +87,7 @@
             <artifactId>commons-codec</artifactId>
             <version>1.16.1</version>
         </dependency>
+        <!--swagger 依赖-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
@@ -107,7 +109,7 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--        中通快递 -->
+        <!--中通快递 sdk-->
         <dependency>
             <groupId>com.zto.zop</groupId>
             <artifactId>zopsdk</artifactId>
@@ -115,14 +117,14 @@
             <scope>system</scope>
             <systemPath>${pom.basedir}/libs/zopsdk-0.11.jar</systemPath>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>com.yl</groupId>-->
-<!--            <artifactId>yl-jms-isv-sdk</artifactId>-->
-<!--            <version>2.0.0</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${pom.basedir}/libs/yl-jms-isv-sdk-2.0.0.jar</systemPath>-->
-<!--        </dependency>-->
+        <!--极兔jdk -->
+        <dependency>
+            <groupId>com.yl</groupId>
+            <artifactId>yl-jms-isv-sdk</artifactId>
+            <version>2.0.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/libs/yl-jms-isv-sdk-2.0.0.jar</systemPath>
+        </dependency>
     </dependencies>
 
 

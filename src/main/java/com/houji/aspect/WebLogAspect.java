@@ -12,10 +12,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Method;
 
 /**
- * @ClassName WebLogAspect
+ * @ClassName WebLogAspect 主要用于打印请求接口日志
  * @Description apo 切面类的实际应用场景，日志管理打印出日志
  * @Author Alex
  * @Date 2024/1/21 22:37
@@ -34,9 +33,11 @@ public class WebLogAspect {
 
     /**
      * 以自定义 @WebLog 注解为切点
+     * execution(public * com.houji.controller.*.*(..) 这个是一个匹配规则，匹配controller层的所有接口
      */
-    @Pointcut("execution(public * com.avia.controller.*.*(..))")
+    @Pointcut("execution(public * com.houji.controller.*.*(..))")
     public void webLog() {
+
     }
 
     /**
@@ -51,21 +52,16 @@ public class WebLogAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
-        // 获取 @WebLog 注解的描述信息
-        String methodDescription = getAspectLogDescription(joinPoint);
-
         // 打印请求相关参数
         log.info("========================================== Start ==========================================");
         // 打印请求 url
         log.info("URL            : {}", request.getRequestURL().toString());
         String remoteUser = request.getRemoteUser();
-        // 打印描述信息
-        log.info("Description    : {}", methodDescription);
         // 打印 Http method
         log.info("HTTP Method    : {}", request.getMethod());
         // 打印调用 controller 的全路径以及执行方法
         log.info("Class Method   : {}.{}", joinPoint.getSignature().getDeclaringTypeName(),
-            joinPoint.getSignature().getName());
+                joinPoint.getSignature().getName());
         // 打印请求的 IP
         log.info("IP             : {}", request.getRemoteAddr());
         // 打印请求入参
@@ -82,7 +78,7 @@ public class WebLogAspect {
     public void doAfter() throws Throwable {
         // 接口结束后换行，方便分割查看
         log.info("=========================================== End ==========================================="
-            + LINE_SEPARATOR);
+                + LINE_SEPARATOR);
     }
 
     /**
@@ -94,6 +90,7 @@ public class WebLogAspect {
      */
     @Around("webLog()")
     public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+
         long startTime = System.currentTimeMillis();
         Object result = proceedingJoinPoint.proceed();
         // 打印出参
@@ -103,40 +100,14 @@ public class WebLogAspect {
         return result;
     }
 
-
-    /**
-     * 获取切面注解的描述
-     *
-     * @param joinPoint 切点
-     * @return 描述信息
-     * @throws Exception
-     */
-    public String getAspectLogDescription(JoinPoint joinPoint)
-        throws Exception {
-        String targetName = joinPoint.getTarget().getClass().getName();
-        String methodName = joinPoint.getSignature().getName();
-        Object[] arguments = joinPoint.getArgs();
-        Class targetClass = Class.forName(targetName);
-        Method[] methods = targetClass.getMethods();
-        StringBuilder description = new StringBuilder();
-        for (Method method : methods) {
-            if (method.getName().equals(methodName)) {
-                Class[] clazzs = method.getParameterTypes();
-                if (clazzs.length == arguments.length) {
-                    break;
-                }
-            }
-        }
-        return description.toString();
-    }
-
     private String getParams(JoinPoint joinPoint) {
+
         String params = "";
         if (joinPoint.getArgs() != null && joinPoint.getArgs().length > 0) {
             for (int i = 0; i < joinPoint.getArgs().length; i++) {
                 Object arg = joinPoint.getArgs()[i];
                 if ((arg instanceof HttpServletResponse) || (arg instanceof HttpServletRequest)
-                    || (arg instanceof MultipartFile) || (arg instanceof MultipartFile[])) {
+                        || (arg instanceof MultipartFile) || (arg instanceof MultipartFile[])) {
                     continue;
                 }
                 try {
